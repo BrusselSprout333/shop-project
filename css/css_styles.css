@@ -1,0 +1,223 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+body
+{   background-color: antiquewhite !important;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 16px;
+}
+
+.nav
+{
+    height: 100px;
+    background-color: navajowhite;
+    display: flex;
+    justify-content: space-between; /*раскидываем логотип и меню по разным краям*/
+    align-items: center; /*размещаем по центру*/
+}
+
+.nav-ul
+{
+    list-style: none;
+    display: flex;
+    margin-right: 35px;
+}
+
+.nav-elem
+{
+    margin-left: 25px;
+
+}
+
+.nav-link
+{
+    text-decoration: none;
+    color: black;
+    font-family: "Andale Mono", monospace;
+}
+
+.nav-img
+{
+    width: 20px;
+    height: 20px;
+}
+
+.nav-elem:hover
+{
+    opacity: 0.5;
+}
+
+.logo
+{
+    margin-left: 40px;
+    width: 50px;
+    height: 50px;
+}
+
+.logo:hover
+{
+    opacity: 0.6;
+}
+
+.basket-items
+{
+    color: black;
+    font-size: 10px;
+}
+
+h1
+{
+    font-size: 30px;
+    font-family: "Andale Mono", monospace;
+    text-align: center;
+    margin-left: 130px;
+}
+
+#top
+{
+    margin-left: 180px;
+}
+
+h2
+{
+    font-size: 24px;
+    font-family: "Andale Mono", monospace;
+    color: #b97c49;
+    text-align: center;
+    position: relative;
+    margin: 30px auto 10px;
+}
+
+.name-product
+{
+    font-size: 20px;
+}
+
+.btn-delete
+{
+    border: 0;
+    padding: 5px 15px;
+    color: sandybrown;
+    font-size: 15px;
+    background: brown;
+    position: relative;
+    top: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn-delete:hover
+{
+    color: #b97c49;
+    background: #6e1b1b;
+}
+
+.add-to-basket{
+    border: 0;
+    padding: 5px 15px;
+    color: #b97c49;
+    font-size: 15px;
+    background: navajowhite;
+    position: relative;
+    top: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.add-to-basket:hover
+{
+    background: #b97c49;
+    color: black;
+}
+
+.summa
+{
+    text-align: left;
+    position: relative;
+    top: -25px;
+    left: 15px;
+}
+
+.summa b
+{
+    color: saddlebrown;
+    font-size: 22px;
+}
+
+.basket-button
+{
+    border: 0;
+    padding: 10px 30px;
+    left: 140px;
+    top: -10px;
+    color: saddlebrown;
+    font-size: 16px;
+    background: sandybrown;
+    position: relative;
+    border-radius: 5px;
+}
+
+.basket-button:hover
+{
+    color: #6c370f;
+    background: #b97c49;
+}
+
+.product
+{
+    list-style: none;
+    padding: 25px;
+    background: white;
+    position: relative;
+    width: 340px;
+    margin: 20px 30px;
+    border-radius: 20px;
+}
+
+.product:hover
+{
+    border: dimgrey 3px;
+    box-shadow: 6px 6px 10px dimgrey;
+    border-radius: 20px;
+}
+
+.catalog{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer
+{
+    margin: 10px 30px 20px;
+}
+
+.btn-success
+{
+    border: 0;
+    padding: 5px 15px;
+    color: #b97c49;
+    font-size: 15px;
+    background: navajowhite;
+    position: relative;
+    top: 5px;
+    border-radius: 5px;
+}
+
+.btn-success:hover
+{
+    background: #b97c49;
+    color: black;
+}
+
+.col
+{
+    margin: 0px 40px ;
+}
+
+.form-control{
+    margin-bottom: -10px;
+}
