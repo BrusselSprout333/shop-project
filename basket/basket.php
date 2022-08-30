@@ -22,7 +22,7 @@
         <li class="nav-elem">
             <a href="http://localhost:8888/shop/catalog.php" class="nav-link">Каталог</a>
         </li>
-        <li class="nav-elem"><a href="#" class="nav-link">
+        <li class="nav-elem"><a href="#footer-contact" class="nav-link">
                 <img class="nav-img" src="http://localhost:8888/shop/img/call.png"></a>
         </li>
         <li class="nav-elem"><a href="http://localhost:8888/shop/registration/exit.php" class="nav-link">
@@ -43,9 +43,14 @@
 
     $items_in_basket = 0;
     $suma = 0;
+    $hidden_button = 0;
 
-    if($correct_num == '')
-        echo "<p> Сейчас тут нет товаров </p><br>";
+    if($correct_num == '') {
+        $hidden_button = 1;
+        echo "<p class='no-items'> Сейчас тут нет товаров </p><br>";?>
+        <style>.footer{margin-top: 310px;}</style>
+        <?php
+    }
 
     echo '<ul class="catalog">';
     while ($correct_num!= '') {
@@ -97,8 +102,39 @@
 
     <?php
     $mysql->close();
-    ?>
+
+    if($hidden_button == 0) :
+            ?>
     <button class="basket-button"><b>Купить</b></button>
+        <?php endif; ?>
     </main>
+
+<footer class="footer">
+    <div class="wrapper">
+        <div class="footer__top">
+            <div class="footer__left">
+                <a href="http://localhost:8888/shop/catalog.php" ><img class="footer__logo" src="http://localhost:8888/shop/img/sofa.png"></a>
+                <p class="footer__title">Home Furniture</p>
+
+                </a>
+            </div>
+            <div class="footer__right">
+                <div class="footer__contact">
+                    <a name="footer-contact"></a>
+                    Контакты
+                </div>
+                <div class="footer__phone">
+                    +375 (029) 000-00-00
+                </div>
+                <div class="footer__address">
+                    Минск, ул. Одинцовa, д. 1, оф. 1
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            © 2022 Home Furniture All Rights Reserved.
+        </div>
+    </div>
+</footer>
 </body>
 </html>

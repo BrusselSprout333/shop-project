@@ -24,7 +24,7 @@
             <a href="basket/basket.php" class="nav-link"><img class="nav-img" src="img/basket.png"></a>
             <sub class="basket-items"><?=$items_in_basket?></sub>
         </li>
-        <li class="nav-elem"><a href="#" class="nav-link">
+        <li class="nav-elem"><a href="#footer-contact" class="nav-link">
                 <img class="nav-img" src="http://localhost:8888/shop/img/call.png"></a></li>
         <li class="nav-elem"><a href="/shop/registration/exit.php" class="nav-link"><img class="nav-img" src="img/logout.png"></a></li>
     </ul>
@@ -55,8 +55,31 @@
 
     </main>
 </body>
-<footer>
-    <p class="footer">2020-2022</p>
-    <!-- footer по примеру -->
+<footer class="footer">
+    <div class="wrapper">
+        <div class="footer__top">
+            <div class="footer__left">
+                <a href="catalog.php" ><img class="footer__logo" src="img/sofa.png"></a>
+                <p class="footer__title">Home Furniture</p>
+
+                </a>
+            </div>
+            <div class="footer__right">
+                <div class="footer__contact">
+                    <a name="footer-contact"></a>
+                    Контакты
+                </div>
+                <div class="footer__phone">
+                    +375 (029) 000-00-00
+                </div>
+                <div class="footer__address">
+                    Минск, ул. Одинцовa, д. 1, оф. 1
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            © 2022 Home Furniture All Rights Reserved.
+        </div>
+    </div>
 </footer>
 </html>

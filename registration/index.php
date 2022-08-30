@@ -11,11 +11,11 @@
     <img class="logo" src="http://localhost:8888/shop/img/sofa.png">
     <h1>Home Furniture</h1>
     <ul class="nav-ul">
-        <li class="nav-elem"><a href="#" class="nav-link">
+        <li class="nav-elem"><a href="#footer-contact" class="nav-link">
                 <img class="nav-img" src="http://localhost:8888/shop/img/call.png"></a></li>
     </ul>
 </nav>
-
+<main>
 <div class="container">
     <?php
     if($_COOKIE['user'] == ''):
@@ -43,10 +43,36 @@
         </div>
     </div>
     <?php else: header('Location: /shop/catalog.php');
-    endif;
-
-    ?>
+    endif; ?>
 
 </div>
+</main>
 </body>
+<footer class="footer" style="margin-top: 200px">
+    <div class="wrapper">
+        <div class="footer__top">
+            <div class="footer__left">
+                <a href="#" ><img class="footer__logo" src="http://localhost:8888/shop/img/sofa.png"></a>
+                <p class="footer__title">Home Furniture</p>
+
+                </a>
+            </div>
+            <div class="footer__right">
+                <div class="footer__contact">
+                    <a name="footer-contact"></a>
+                    Контакты
+                </div>
+                <div class="footer__phone">
+                    +375 (029) 000-00-00
+                </div>
+                <div class="footer__address">
+                    Минск, ул. Одинцовa, д. 1, оф. 1
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            © 2022 Home Furniture All Rights Reserved.
+        </div>
+    </div>
+</footer>
 </html>

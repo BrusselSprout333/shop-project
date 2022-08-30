@@ -10,6 +10,10 @@ body
     font-size: 16px;
 }
 
+.main {
+    flex: 1 0 auto;
+}
+
 .nav
 {
     height: 100px;
@@ -166,6 +170,11 @@ h2
     background: #b97c49;
 }
 
+.no-items
+{
+    margin: 40px;
+}
+
 .product
 {
     list-style: none;
@@ -188,11 +197,6 @@ h2
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-}
-
-.footer
-{
-    margin: 10px 30px 20px;
 }
 
 .btn-success
@@ -220,4 +224,87 @@ h2
 
 .form-control{
     margin-bottom: -10px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.footer{
+    flex: 0 0 auto;
+    background-color: navajowhite;
+    margin-top: 25px;
+}
+
+.footer__title
+{
+    font-size: 28px;
+    color: black;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.footer__contact
+{
+    font-size: 16px;
+    color: #b97c49;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    margin-top: 20px;
+}
+
+.footer__phone
+{
+    font-weight: 700;
+    font-size: 24px;
+    color: black;
+}
+
+.footer__address
+{
+    font-weight: 300;
+    font-size: 12px;
+    color: #b97c49;
+    margin: 16px 0;
+}
+
+.footer__top
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #b97c49;
+}
+
+.footer__bottom
+{
+    font-weight: 300;
+    font-size: 12px;
+    color: #b97c49;
+    margin: 20px 40px;
+}
+
+.footer__left
+{
+    margin: 30px 40px;
+}
+
+.footer__right
+{
+    text-align: right;
+    margin-right: 40px;
+}
+
+.footer__logo
+{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.footer__logo:hover
+{
+    opacity: 0.6;
 }
