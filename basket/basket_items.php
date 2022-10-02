@@ -1,24 +1,14 @@
 <?php
-$user = $_COOKIE['user'];
-$mysql = new mysqli('localhost','root',
-    'root','shop');
+require_once "mysqli.php";
+session_start();
+$user = $_SESSION['user'];
+$user_bd = $mysql->query("SELECT * FROM `users` WHERE `login` = '$user'");
+$user_bd = $user_bd->fetch_assoc();
+$user_id = $user_bd["id"];
 
-$number1 = $mysql->query("SELECT * FROM `users` WHERE `login` = '$user'");
-$num = $number1->fetch_assoc();
-$correct_num = $num["products"];
+$products = $mysql->query("SELECT * FROM `product_users` WHERE `id_users` = '$user_id'");
+$products = $products->fetch_all(); //массив номеров из таблицы product_users
+
 $items_in_basket = 0;
-while ($correct_num!= '') {
-    if(strripos($correct_num, ",")) {
-        $corr_part = stristr($correct_num, ',', true);
-        $number2 = $mysql->query("SELECT * FROM `product` WHERE `id` = '$corr_part'");
-        $final = $number2->fetch_assoc(); //продукт с нужным id в его табл
-        $correct_num = str_replace($corr_part.',', '', $correct_num);
-    }
-    else{
-        $number3 = $mysql->query("SELECT * FROM `product` WHERE `id` = '$correct_num'");
-        $final = $number3->fetch_assoc(); //продукт с нужным id в его табл
-        $correct_num = str_replace($correct_num, '', $correct_num);
-    }
-    $items_in_basket ++;
-}
-$mysql->close();
+foreach ($products as $product)
+    $items_in_basket+=$product[3];

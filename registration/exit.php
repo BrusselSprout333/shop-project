@@ -1,3 +1,5 @@
 <?php
-setcookie('user', $user['login'], time() - 3600, "/");
+session_start();
+unset($_SESSION['user']);
+$_SESSION['auth'] = false;
 header('Location: /shop/registration/index.php');

@@ -1,18 +1,28 @@
 <?php
 //закидывать в таблицу товары по id  в  products
-$id = $_GET['id'];
-$user = $_COOKIE['user'];
+session_start();
+$id_product = $_GET['id']; //id товара
+$user = $_SESSION['user'];
 
-$mysql = new mysqli('localhost','root',
-    'root','shop');
-//$mysql->query("UPDATE `users` SET `products` = '$id' WHERE `users`.`login` = '$user'");
-$number1 = $mysql->query("SELECT * FROM `users` WHERE `login` = '$user'"); //нужный пользователь
-$num = $number1->fetch_assoc();
-$correct_num = $num["products"]; //товары у пользователя
+require_once "../mysqli.php";
+$user = $mysql->query("SELECT `id` FROM `users` WHERE `login` = '$user'"); //нужный пользователь
+$user = $user->fetch_assoc();
 
-$mysql->query("UPDATE `users` SET `products` = '$id,$correct_num' WHERE `users`.`login` = '$user'");
+$products = $mysql->query("SELECT * FROM `product_users` WHERE `id_users` = '$user[id]'"); //нужный пользователь
+$products = $products->fetch_all();
+
+$num = 0;
+foreach ($products as $product){
+    $count = intval($product[3]);
+    if($product[2] == $id_product) {
+        $count++;$num++;
+        $mysql->query("UPDATE `product_users` SET `count` = '$count' 
+                       WHERE `product_users` . `id_product` = '$id_product'");
+    }
+}
+if($num == 0)
+    $mysql->query("INSERT INTO `product_users` (`id`, `id_users`, `id_product`) 
+                        VALUES (NULL, '$user[id]', '$id_product')");
 
 $mysql->close();
-
-header('Location: /shop/catalog.php');
-
+header('Location: ../catalog.php');

@@ -1,28 +1,29 @@
 <?php
 //удаление товаров из корзины
-$del_id = $_GET['id'];
-$user = $_COOKIE['user'];
+session_start();
+$user = $_SESSION['user'];
+$del_id = $_GET['id']; //id товара
+require_once "../mysqli.php";
 
-$mysql = new mysqli('localhost','root', 'root','shop');
-$number1 = $mysql->query("SELECT * FROM `users` WHERE `login` = '$user'"); //нужный пользователь
-$num = $number1->fetch_assoc();
-$correct_num = $num["products"]; //товары у пользователя
+$user = $mysql->query("SELECT `id` FROM `users` WHERE `login` = '$user'"); //нужный пользователь
+$user = $user->fetch_assoc();
+$id_user = $user['id']; //id текущего пользователя
 
-echo $correct_num.'<br>';
-echo $del_id.'<br>';
+$products = $mysql->query("SELECT * FROM `product_users` WHERE `id_users` = '$id_user'"); //нужный пользователь
+$products = $products->fetch_all();
 
-if($del_id == $correct_num)
-    $corr_part = str_replace($del_id, '', $correct_num);
-
-elseif(strripos($correct_num, ','.$del_id))
-    $corr_part = str_replace(','.$del_id, '', $correct_num);
-
-else
-    $corr_part = str_replace($del_id . ',', '', $correct_num);
-
-echo $corr_part . '<br>'; //то что возвращается обратно
-
-$mysql->query("UPDATE `users` SET `products` = '$corr_part' WHERE `users`.`login` = '$user'");
+foreach ($products as $product) {
+    $count = intval($product[3]);
+    if($product[2] == $del_id){
+        print_r($count);
+        if($count>1) { //если больше 1, уменьшаем кол-во
+            $count--;
+            $mysql->query("UPDATE `product_users` SET `count` = '$count' 
+                       WHERE `product_users` . `id_product` = '$del_id'");
+        } else //если 1, то удаляем
+            $mysql->query("DELETE FROM `product_users` WHERE `product_users`.`id` = '$product[0]'");
+    }
+}
 $mysql->close();
 
-header('Location: /shop/basket/basket.php');
+header('Location: ../basket.php');

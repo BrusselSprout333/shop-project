@@ -1,0 +1,76 @@
+#top
+{
+    margin-left: 167px;
+}
+.btn-delete
+{
+    border: 0;
+    padding: 5px 15px;
+    color: navajowhite;
+    font-size: 15px;
+    background: brown;
+    position: relative;
+    top: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn-delete:hover
+{
+    color: #e0b16b;
+    background: #6e1b1b;
+    transition: 0.2s;
+}
+
+.summa
+{
+    text-align: left;
+    position: relative;
+    padding-bottom: 10px;
+    left: 30px;
+}
+
+.summa b
+{
+    color: brown;
+    font-size: 22px;
+}
+
+.basket-button
+{
+    border: 0;
+    padding: 10px 30px;
+    left: 140px;
+    color: #b97c49;
+    font-size: 16px;
+    background: navajowhite;
+    position: relative;
+    border-radius: 5px;
+}
+
+.basket-button:hover
+{
+    color: black;
+    background:#e0b16b;
+    transition: 0.2s;
+}
+
+.no-items
+{
+    margin: 40px;
+}
+
+.basket_count{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product_count{
+    color: #b97c49;
+    border: 1px solid #b97c49;
+    border-radius: 15px;
+    background-color: antiquewhite;
+    padding: 3px 5px;
+    text-align: center;
+    min-width: 15px;
+}

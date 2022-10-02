@@ -1,0 +1,124 @@
+.basket-items
+{
+    color: black;
+    font-size: 10px;
+}
+.catalog_flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* sort */
+.catalog_sort {
+    display: inline-block;
+    overflow: hidden;
+    margin: 10px 10px 0px 30px;
+}
+.radio-item {
+    display: inline-block;
+    float: left;
+}
+.catalog_sort input[type=radio] {
+    display: none;
+}
+.catalog_sort label {
+    font-size: 14px;
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px 15px;
+    line-height: 25px;
+   /* border: 1px solid #999;*/
+    border-right: none;
+    user-select: none;
+    background-color: navajowhite;;
+}
+.catalog_sort .item1 label {
+    border-radius: 6px 0 0 6px;
+}
+.catalog_sort .item4 label {
+    border-radius: 0 6px 6px 0;
+}
+.catalog_sort input[type=radio]:checked + label {
+    background: #e0b16b;
+    transition: 0.2s;
+}
+.sort_btn{
+    margin-top: 10px;
+    padding: 5px 14px;
+    color: #b97c49;
+    font-size: 14px;
+    background: navajowhite;
+    position: relative;
+    border-radius: 5px;
+    border: none;
+}
+.sort_btn:hover
+{
+    background: #e0b16b;
+    color: black;
+    border-color: #e0b16b;
+    transition: 0.2s;
+}
+
+/* search */
+.catalog_search{
+    margin: 10px 50px 0px;
+}
+.search_input{
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+.search_input:focus{
+    outline:none;
+}
+.search_btn {
+    margin-top: 10px;
+    padding: 4px 8px;
+    color: #b97c49;
+    font-size: 12px;
+    background: navajowhite;
+    position: relative;
+    border-radius: 5px;
+    border: none;
+}
+.search_btn:hover{
+    background: #e0b16b;
+    color: black;
+    border-color: #e0b16b;
+    transition: 0.2s;
+}
+
+
+/* categories */
+.category_name{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.all_categories{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    width: 100%;
+}
+.category{
+    width: 16%;
+    margin: 20px 10px;
+}
+.category_photo{
+    display: block;
+    margin: 0px auto;
+    width: 80px;
+    height: 80px;
+}
+.category:hover{
+    opacity: 0.6;
+    transition: 0.2s;
+}
+.category_text{
+    margin-top: 8px;
+    text-align: center;
+}

@@ -1,3 +1,16 @@
+/*
+.color_palette {
+    color: white;
+    color:antiquewhite;
+    color:navajowhite;
+    color: #e0b16b;
+    color: #b97c49;
+    color:brown;
+    color:#6e1b1b;
+    color: black;
+}
+ */
+
 *
 {
     padding: 0;
@@ -13,7 +26,7 @@ body
 .main {
     flex: 1 0 auto;
 }
-
+/*шапка*/
 .nav
 {
     height: 100px;
@@ -65,11 +78,11 @@ body
 {
     opacity: 0.6;
 }
-
-.basket-items
-{
-    color: black;
-    font-size: 10px;
+/*main*/
+.catalog {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 h1
@@ -78,11 +91,6 @@ h1
     font-family: "Andale Mono", monospace;
     text-align: center;
     margin-left: 130px;
-}
-
-#top
-{
-    margin-left: 180px;
 }
 
 h2
@@ -94,85 +102,20 @@ h2
     position: relative;
     margin: 30px auto 10px;
 }
-
+/*product*/
 .name-product
 {
     font-size: 20px;
 }
 
-.btn-delete
-{
-    border: 0;
-    padding: 5px 15px;
-    color: sandybrown;
-    font-size: 15px;
-    background: brown;
-    position: relative;
-    top: 5px;
-    border-radius: 5px;
-    margin-top: 10px;
+.price{
+    color: firebrick;
+    font-size: 20px;
 }
 
-.btn-delete:hover
-{
-    color: #b97c49;
-    background: #6e1b1b;
-}
-
-.add-to-basket{
-    border: 0;
-    padding: 5px 15px;
-    color: #b97c49;
-    font-size: 15px;
-    background: navajowhite;
-    position: relative;
-    top: 5px;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.add-to-basket:hover
-{
-    background: #b97c49;
-    color: black;
-}
-
-.summa
-{
-    text-align: left;
-    position: relative;
-    top: -25px;
-    left: 15px;
-}
-
-.summa b
-{
-    color: saddlebrown;
-    font-size: 22px;
-}
-
-.basket-button
-{
-    border: 0;
-    padding: 10px 30px;
-    left: 140px;
-    top: -10px;
-    color: saddlebrown;
-    font-size: 16px;
-    background: sandybrown;
-    position: relative;
-    border-radius: 5px;
-}
-
-.basket-button:hover
-{
-    color: #6c370f;
-    background: #b97c49;
-}
-
-.no-items
-{
-    margin: 40px;
+.image-catalog{
+    width: 340px;
+    height: 250px;
 }
 
 .product
@@ -191,39 +134,11 @@ h2
     border: dimgrey 3px;
     box-shadow: 6px 6px 10px dimgrey;
     border-radius: 20px;
+    transition: 0.2s;
 }
 
-.catalog{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.btn-success
-{
-    border: 0;
-    padding: 5px 15px;
-    color: #b97c49;
-    font-size: 15px;
-    background: navajowhite;
-    position: relative;
-    top: 5px;
-    border-radius: 5px;
-}
-
-.btn-success:hover
-{
-    background: #b97c49;
-    color: black;
-}
-
-.col
-{
-    margin: 0px 40px ;
-}
-
-.form-control{
-    margin-bottom: -10px;
+.image-catalog{
+    border-radius: 10px;
 }
 
 .wrapper {
@@ -232,10 +147,31 @@ h2
     min-height: 100%;
 }
 
+/* button add to basket*/
+.add-to-basket{
+    border: 0;
+    padding: 5px 15px;
+    color: #b97c49;
+    font-size: 15px;
+    background: navajowhite;
+    position: relative;
+    top: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    vertical-align: bottom;
+}
+
+.add-to-basket:hover
+{
+    background: #e0b16b;
+    color: black;
+    transition: 0.2s;
+}
+/* footer */
 .footer{
     flex: 0 0 auto;
     background-color: navajowhite;
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
 .footer__title
@@ -307,4 +243,5 @@ h2
 .footer__logo:hover
 {
     opacity: 0.6;
+    transition: 0.2s;
 }
